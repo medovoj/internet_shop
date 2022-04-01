@@ -3,6 +3,7 @@ package SecurityFilter;
 import WebUtils.SessionUtils;
 import WebUtils.WebUtils;
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import model.ShoppingCart;
 
 import java.io.IOException;
 
+@WebFilter("/*")
 public class AutoRestoreShoppingCartFilter implements Filter {
 
     private static final String SHOPPING_CART_DESERIALIZATION_DONE = "SHOPPING_CART_DESERIALIZATION_DONE";
